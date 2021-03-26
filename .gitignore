@@ -132,4 +132,4 @@ dmypy.json
 .idea
 
 # Credentials
-token.txt
+token
