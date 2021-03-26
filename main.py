@@ -5,8 +5,8 @@ import requests
 from urllib.parse import urljoin
 from telegram.ext import Updater, CommandHandler
 
-PORT = int(os.environ.get('PORT', 5000))
-TOKEN = os.environ.get('TOKEN')
+PORT = int(os.environ.get('PORT', 8443))
+TOKEN = os.environ['TOKEN']
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
