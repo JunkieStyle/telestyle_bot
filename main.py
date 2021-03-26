@@ -36,15 +36,11 @@ def send_meme(update, context):
 
 def main():
     updater = Updater(TOKEN, use_context=True)
-    updater.start_webhook(
-        listen='0.0.0.0',
-        port=int(PORT),
-        url_path=TOKEN
-    )
-    updater.bot.setWebhook('https://telestyle-bot.herokuapp.com/' + TOKEN)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('meme', send_meme, pass_args=True))
-    updater.start_polling()
+    logging.info(f"Start webhook mode on port {PORT}")
+    updater.start_webhook(listen='0.0.0.0', port=int(PORT), url_path=TOKEN)
+    updater.bot.setWebhook('https://telestyle-bot.herokuapp.com/' + TOKEN)
     updater.idle()
 
 
