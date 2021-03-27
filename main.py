@@ -29,7 +29,8 @@ def get_meme_url(subreddit=None):
 
 def error_handler(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
-    context.bot.send_message("Sounds good, does not work... :(")
+    chat_id = update.message.chat_id
+    context.bot.send_message(chat_id=chat_id, text="Sounds good, does not work... :(")
 
 
 def send_meme(update, context):
