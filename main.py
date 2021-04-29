@@ -64,7 +64,7 @@ def send_radio(update: Update, context: CallbackContext):
     logger.info("Got update: %s" % update)
     url = get_radio_url()
     chat_id = update.message.chat_id
-    context.bot.send_message(chat_id=chat_id, photo=url)
+    context.bot.send_message(chat_id=chat_id, text=url)
 
 
 def main():
